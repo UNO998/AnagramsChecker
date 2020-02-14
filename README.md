@@ -20,7 +20,7 @@ One way is using maven command
 1. cd to root folder or project
 2. type 'mvn test' in terminal to run the test in project
 3. type 'mvn spring-boot:run' in terminal to run the server
-4. access server by URL: http://localhost:8080/anagrams/{string1}/{string2}}
+4. access server by URL: http://localhost:8080/anagrams/{string1}/{string2}
 
 ************
 
@@ -38,6 +38,7 @@ Another way is to execute the `main` method from your IDE.
 |  URL |  Method |
 |----------|--------------|
 |`http://localhost:8080/anagrams/{string1}/{string2}`  			| GET |
+
 Provided Testing URL:
 1. Send request: "localhost/8080/anagrams/asdf/fdsa" => return 200 (HttpStatus.OK) {areAnagrams:true}
 2. Send request: "localhost/8080/anagrams/asdf/fff" => return 200 (HttpStatus.OK) {areAnagrams:false}
