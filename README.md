@@ -2,6 +2,10 @@
 
 A anagrams checker server with basic REST API.
 
+Anagram: a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+Valid Input String: only contains character 'a'--'z' || 'A'--'Z' || whitespace
+
 ## Built With
 
 * 	[Maven](https://maven.apache.org/) - Dependency Management
@@ -17,7 +21,7 @@ A anagrams checker server with basic REST API.
 
 One way is using maven command
 
-1. cd to root folder or project
+1. cd to root folder of project
 2. type 'mvn test' in terminal to run the test in project
 3. type 'mvn spring-boot:run' in terminal to run the server
 4. access server by URL: http://localhost:8080/anagrams/{string1}/{string2}
