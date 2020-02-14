@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Optional;
+
 @RestController
 public class AnagramsCheckController {
 
@@ -22,6 +25,26 @@ public class AnagramsCheckController {
     @GetMapping("/anagrams/{string1}/{string2}")
     ResponseEntity<?> getAnagrams(@PathVariable String string1,
                                   @PathVariable String string2) {
-        return new ResponseEntity<>("success", HttpStatus.ACCEPTED);
+
+        log.info("Input String1: {}, String2: {}", string1, string2);
+
+        Optional<Boolean> result = checkService.checkAnagrams(string1, string2);
+
+        log.info("Anagrams check result: {}", result);
+
+        if (result.isPresent()) {
+
+            // return {areAnagrams:true||false} with Json format
+            HashMap<String, Boolean> map = new HashMap<>();
+
+            map.put("areAnagrams", result.get());
+
+            return new ResponseEntity<>(map, HttpStatus.OK);
+
+        } else {
+            // return 400 bad request when inputting invalid strings
+            return new ResponseEntity<>("Invalid Input string", HttpStatus.BAD_REQUEST);
+
+        }
     }
 }
