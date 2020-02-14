@@ -67,7 +67,7 @@ class AnagramsCheckControllerTest {
         mvc.perform(
                 get("/anagrams/asdf/ff_!@#$%f"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string(containsString("Invalid Input string"))
+                .andExpect(content().string(containsString("Input string is invalid"))
                 );
 
     }
