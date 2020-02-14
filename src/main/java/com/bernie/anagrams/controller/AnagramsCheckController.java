@@ -43,7 +43,7 @@ public class AnagramsCheckController {
 
         } else {
             // return 400 bad request when inputting invalid strings
-            return new ResponseEntity<>("Invalid Input string", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Input string is invalid", HttpStatus.BAD_REQUEST);
 
         }
     }
